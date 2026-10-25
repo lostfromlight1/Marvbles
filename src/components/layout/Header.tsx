@@ -22,6 +22,13 @@ export function Header() {
       <Link to="/" className="wordmark">
         {site.name}
       </Link>
+      <nav className="header-nav" aria-label="Primary">
+        {links.map((item) => (
+          <Link key={item.to} to={item.to}>
+            {item.label}
+          </Link>
+        ))}
+      </nav>
       <button
         type="button"
         className="menu-button"
@@ -34,7 +41,7 @@ export function Header() {
         <span />
         <span />
       </button>
-      <nav id="menu-area" className="menu-overlay" aria-label="Primary" hidden={!open}>
+      <nav id="menu-area" className="menu-overlay" aria-label="Menu" hidden={!open}>
         {links.map((item) => (
           <Link key={item.to} to={item.to}>
             {item.label}

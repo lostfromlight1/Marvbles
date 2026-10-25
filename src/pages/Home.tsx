@@ -23,16 +23,9 @@ export function Home() {
         <VideoCompilation />
       </section>
 
-      <section className="block" id="artists">
+      <section className="block" id="works">
         <div className="content-inner">
-          <UnitRoster unit="Eonica" talents={talents} />
-          <UnitRoster unit="Nox" talents={talents} />
-        </div>
-      </section>
-
-      <section className="block" id="discography">
-        <div className="content-inner">
-          <h2 className="content-title">Discography</h2>
+          <h2 className="content-title">Works</h2>
           {releases.length === 0 ? (
             <p className="empty">Nothing here yet.</p>
           ) : (
@@ -41,6 +34,13 @@ export function Home() {
           <Link className="section-link" to="/vsinger">
             All releases
           </Link>
+        </div>
+      </section>
+
+      <section className="block" id="artists">
+        <div className="content-inner">
+          <UnitRoster unit="Eonica" talents={talents} />
+          <UnitRoster unit="Nox" talents={talents} />
         </div>
       </section>
     </div>

@@ -1,0 +1,68 @@
+---
+description: Marvbles stack, folders, and showcase-not-services rule
+alwaysApply: true
+---
+
+# Project
+
+This repo (`D:\codes\Marvbles`) is a private talent and work showcase. The public name is Marvbles. The VSinger units are Eonica and Nox. Eonica is Sasayaka Lumi, Morika Rei, Seika Marionette, and Amanogawa. Nox is Nyanoh, Hoshimi Ritsu, Kasumi Toka, and Danny Amberynth. Do not add or drop a real name. Extra list entries stay `dummy: true`. Real bios and theme colors stay empty until Kaung supplies them. Dummy bios are placeholders.
+
+The previous paper-label site is discarded. Do not read it, port it, or match its layout.
+
+This is not a service site. Do not add pricing, "hire us", inquiry forms, client logos, or a services page.
+
+## Stack
+
+The app is Vite 6, React 19, React Router 7, and TypeScript from the first file. New source files are `.tsx` or `.ts`.
+
+- Do not move the app to Astro, Next.js, or Tailwind.
+- Styles are CSS custom properties: `src/styles/tokens.css` and `base.css`. The look is the Kamitsubaki pattern in `10-design-system.mdc`.
+- GSAP, Lenis, and Swiper stay out until the scroll pass. Playback is a YouTube embed. Do not add a hosted audio file or wavesurfer yet.
+- The wordmark is text, "Marvbles", until an SVG logo exists.
+- UI copy is English.
+
+## Folders
+
+The app lives in this folder.
+
+```
+src/app/                 routes, layout, transitions
+src/pages/               Home, Vsinger, Talent, Release, Illustration, Artwork, Animation, AnimationDetail, About, NotFound
+src/components/ui/       Explore
+src/components/media/    MiniPlayer, Lightbox, VideoReel, FrameSequence
+src/components/layout/   Header, Footer, Loader
+src/motion/              scroll and interaction helpers
+src/content/             JSON or MDX. See 30-content.mdc
+src/styles/              tokens and the Kamitsubaki pattern
+public/assets/ref/       reference placeholders only, plus ASSETS.md
+public/assets/arri/      real studio assets
+```
+
+`resource/` is the saved reference material. `design-study/` is what was actually found there. `docs/PLAN.md` is the build plan.
+
+## UI
+
+One home, in the Kamitsubaki pattern: fixed wordmark, menu overlay, scroll cue, black news band, white roster list, square discography. The glass Sky / Reel / Key switch is retired. Do not copy the Kamitsubaki logo, slogan, news, or store. Otsu `#52ff00` and Cover `#0099EB` stay out.
+
+## Conventions
+
+- Functional components. One component per file unless a file already exports a small pair.
+- Copy and credits come from `src/content`. Do not hard-code bios, theme colors, or credits in components.
+- Files in `resource/` and `public/assets/ref/` are placeholders. Label them. Never present them as studio work.
+- Ask before adding a library that `docs/PLAN.md` does not already name, and before deleting files.
+- The private prototype stays `noindex`.
+
+```tsx
+// Bad: a services pitch baked into a page
+<p>Hire us for illustration.</p>
+
+// Good: a showcase link whose copy lives in content
+<Link to={`/vsinger/${talent.slug}`}>{talent.name}</Link>
+```
+
+## Do not
+
+- Invent people, bios, client logos, or case studies.
+- Autoplay sound.
+- Ship an inquiry funnel.
+- Recreate the old paper-label pages, services pages, or inquiry calls to action.

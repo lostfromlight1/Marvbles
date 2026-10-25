@@ -1,0 +1,82 @@
+---
+description: Content JSON shapes and how to add a work without code
+alwaysApply: true
+---
+
+# Content
+
+Studio copy, people, and works live in `src/content/` as JSON (MDX only when a long story needs it). All three UI versions read the same files. Do not fork content per version. Components do not embed bios, credits, or theme colors.
+
+The JSON files below are the content source. Do not invent fields, and do not copy the discarded paper-label copy (stand-in project titles, a services menu, or an inquiry line).
+
+Placeholder strings stay marked placeholder. Do not present stand-in titles as finished studio work.
+
+## Files
+
+Files:
+
+- `talents.json` — people
+- `releases.json` — songs
+- `artworks.json` — stills
+- `animations.json` — motion pieces
+- `site.json` — nav, socials, studio story, exhibition entries
+
+## Shapes
+
+Talent:
+
+```json
+{
+  "slug": "sasayaka-lumi",
+  "name": "Sasayaka Lumi",
+  "nameJp": "",
+  "unit": "Eonica",
+  "themeColor": "",
+  "avatar": "",
+  "portrait": "",
+  "fanName": "",
+  "oshiMark": "",
+  "birthday": "",
+  "height": "",
+  "debut": "",
+  "languages": [],
+  "bio": "",
+  "lore": "",
+  "socials": { "youtube": "", "twitch": "", "x": "", "tiktok": "" }
+}
+```
+
+Leave `themeColor` and `lore` empty until Kaung supplies them. A hover bio may be the placeholder "Dummy bio." Do not guess a hex.
+
+Release fields: `slug`, `title`, `talentSlugs[]`, `type` (`cover` | `original` | `unit`), `date`, `jacket`, `credits[{role, name}]`, optional `audioSrc`, `peaks`, `lyrics` (timed lines), `mvYoutubeId`, `streamingLinks[]`. The saved Kamitsubaki pages do not show a working filter. `mixitup.js` is loaded and never called. Building a filter is new. Do not claim it was copied from those HTML files.
+
+The profile fields (fan name, oshi mark, birthday, height, debut, lore) come from the brief. No Chizu HTML is in `resource/`. Leave them empty until Kaung supplies them.
+
+Artwork: `slug`, `title`, `artist`, `category` (`talent-design` | `fan-art` | `key-visual` | `sketch`), `image`, `width`, `height`, `alt`, optional `process[]` (`sketch` | `line` | `color`), `tags[]`, `date`.
+
+Animation: `slug`, `title`, `poster`, `video`, optional `youtubeId`, `credits[]`, `storyboardFrames[]`, `frameSequence` `{path, count}`, `bts[]`.
+
+Site: `nav`, `socials`, `story`, `exhibition[]`. Socials and contact are email and Discord only. No inquiry form.
+
+Lyrics are an array of `{ "t": 0, "line": "" }` in seconds. The line highlight reads this file. The words also render as plain text when audio is off.
+
+## Add a work without code
+
+1. Put the image, audio, or video in `public/assets/arri/`. Reference scraps stay in `public/assets/ref/` and are listed in `ASSETS.md`.
+2. Add one object to the matching JSON file. Reuse an existing `slug` style: lowercase, hyphenated.
+3. Point `image`, `jacket`, `poster`, or `video` at that file. Set `width` and `height` for every still.
+4. For a song, set `talentSlugs` to slugs that already exist in `talents.json`, and set `type`.
+5. For a still with a process reveal, add `process` in order: sketch, line, color.
+6. Do not add a route, a component, or a nav item. The pages read the collection.
+
+A talent with an empty name stays out of the grid. A work with `dummy: true` stays visible and is labeled Dummy. Show a quiet empty state when a collection has no entries.
+
+## Locked roster
+
+Public name: Marvbles. Units: Eonica and Nox. These eight slugs stay. Do not add a real person.
+
+Eonica: `sasayaka-lumi`, `morika-rei`, `seika-marionette`, `amanogawa`.
+
+Nox: `nyanoh`, `hoshimi-ritsu`, `kasumi-toka`, `danny-amberynth`.
+
+Lists show four names, then Show more when the unit has more. Extra entries use a Dummy name and `dummy: true`. Leave `themeColor`, `lore`, `birthday`, `height`, `fanName`, and `oshiMark` empty until Kaung supplies them. A hover bio may be the placeholder "Dummy bio." Site copy is English. Songs use `mvYoutubeId` only. Do not set `audioSrc`. Credits Kaung has not written yet use the name "Dummy" and `dummy: true`. Do not invent a real artist.

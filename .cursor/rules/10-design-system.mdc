@@ -1,0 +1,40 @@
+---
+description: Kamitsubaki-pattern visual system for Marvbles
+alwaysApply: true
+---
+
+# Pattern
+
+The glass-dreamy skin is retired. Layout, type, and color follow the Kamitsubaki home pattern studied in `design-study/10-kamitsubaki.md` and [kamitsubaki.jp](https://kamitsubaki.jp/). Do not copy their logo, slogan, news, artists, store, or tickets. Marvbles copy and the Eonica roster stay ours.
+
+One home. No Sky / Reel / Key switch.
+
+## Color
+
+- Page `#fcfcfc`, ink `#020202`.
+- `body[data-bg=black]` flips to `#020202` ground and `#fcfcfc` ink.
+- Lines `#dadada` on white, `#262626` on black. Muted `#8c8c8c`. Scroll cue `#5c5c5c`.
+- Do not use the pastel glass tokens, Fredoka, Nunito, pills, blobs, or backdrop blur.
+- Do not use Otsu `#52ff00` or Cover `#0099EB`.
+
+## Type
+
+- Reading: Noto Sans, standing in for the commercial gothic.
+- Labels, dates, section titles, Explore: Barlow, standing in for Acumin Pro. Weight 300, letter-spacing `.04em`.
+- Root size follows the study: `23.52px` from 1680px, `1.3888888889vw` from 1024px, `4.9751243781vw` below that.
+- Section title `.content_title` is `1.6rem`, `1.35rem` and centered under 1024px.
+- UI copy is English.
+
+## Layout
+
+- Fixed header: text wordmark and a three-bar menu. The menu is a full-screen overlay. Open state fades the wordmark to `.5` and hides the top and bottom bars.
+- Home order: centered wordmark and a short tracked line, scroll cue, news on black, roster list on white, discography squares on white, footer.
+- Content width `68rem`, `18rem` under 1024px.
+- Jackets are square, unframed, numbered `01`. Explore is a small tracked label with the arrow loop.
+- Empty collections say "Nothing here yet." Dummy work is labeled Dummy.
+
+## Motion
+
+- Ground swap when a `[data-bgchg]` section crosses the viewport midpoint.
+- Scroll line `2s` linear. Arrows `1.6s` `cubic-bezier(0.22, 1, 0.36, 1)`. Link hover opacity `.5` over `.4s` `cubic-bezier(0, 0.55, 0.45, 1)`, fine pointers only.
+- `prefers-reduced-motion` stops the scroll line, the arrows, and smooth scrolling. The ground swap stays instant.

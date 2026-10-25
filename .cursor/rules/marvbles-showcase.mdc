@@ -1,0 +1,10 @@
+---
+description: Superseded. Follow 00-project.mdc and the other showcase rules
+alwaysApply: true
+---
+
+# Superseded
+
+This rule is retired. Follow `00-project.mdc`, `10-design-system.mdc`, `20-motion.mdc`, and `30-content.mdc`.
+
+The paper-label look and the glass-dreamy skins are retired. The site follows the Kamitsubaki pattern. `resource/` art may be copied into `public/assets/ref/` as a labeled placeholder.

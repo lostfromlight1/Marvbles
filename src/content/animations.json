@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "dummy-reel",
+    "title": "Dummy reel",
+    "poster": "",
+    "video": "",
+    "youtubeId": "",
+    "dummy": true,
+    "credits": [{ "role": "Animation", "name": "Dummy" }],
+    "storyboardFrames": [],
+    "bts": [],
+    "talentSlugs": ["sasayaka-lumi"]
+  }
+]
